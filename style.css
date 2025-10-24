@@ -46,9 +46,10 @@ header nav a:hover {
 /* HERO */
 .hero {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 80px 10%;
+  padding: 60px 10%;
   background: linear-gradient(135deg, #000, #0a1a2f);
   position: relative;
   overflow: hidden;
@@ -89,6 +90,9 @@ header nav a:hover {
 }
 
 .hero img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   width: 420px;
   max-width: 100%;
   filter: drop-shadow(0 0 30px rgba(0, 170, 255, 0.3));
@@ -270,4 +274,19 @@ footer {
 
 footer span {
   color: #00aaff;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header nav {
+    margin-top: 10px;
+  }
+
+  .feature-boxes {
+    grid-template-columns: 1fr;
+  }
 }
