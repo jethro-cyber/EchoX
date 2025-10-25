@@ -9,12 +9,18 @@
   <body>
     <header>
       <h1>EchoX</h1>
-      <nav>
+      <nav class="nav-links" id="navLinks">
         <a href="#">Home</a>
         <a href="#">Features</a>
         <a href="#">Pricing</a>
         <a href="#">Contact</a>
       </nav>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </header>
 
     <section class="hero">
@@ -111,5 +117,15 @@
     </section>
 
     <footer>&copy;2025 <span>EchoX</span> All rights reserved.</footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const nav = document.querySelector("nav");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        nav.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>

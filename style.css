@@ -18,7 +18,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 10%;
+  padding: 20px 10%;
   background: rgba(0, 0, 0, 0.7);
   border-bottom: 1px solid rgba(0, 119, 255, 0.3);
   position: sticky;
@@ -37,6 +37,97 @@ header nav a {
   text-decoration: none;
   color: #ccc;
   transition: color 0.3s;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+.hamburger span {
+  display: none;
+  width: 25px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10%;
+    background: linear-gradient(135deg, #0a1a2f, #000);
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1000;
+    position: relative;
+    cursor: pointer;
+  }
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 8%;
+  }
+
+  .hero img {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
 }
 
 header nav a:hover {
@@ -98,26 +189,32 @@ header nav a:hover {
   filter: drop-shadow(0 0 30px rgba(0, 170, 255, 0.3));
 }
 
-@media (max-width: 400px) {
+@media (max-width: 768px) {
   .hero {
     display: flex;
     flex-direction: column;
     padding: 40px 10%;
-    background-image: url(images/hero.jpg);
+    /* background-image: url(images/hero.jpg);
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
   }
   .hero img {
     width: 400px;
     max-width: 100%;
+    display: none;
+  }
+
+  .hero-text {
+    text-align: center;
+    color: #fff;
   }
 }
 
 /* FEATURES */
 .features {
-  background-image: url(/images/feature1.jpg);
-  background-position: center;
+  background-image: url(/images/hero.jpg);
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 80px 10%;
@@ -241,12 +338,24 @@ header nav a:hover {
 /* CONTACT */
 .contact {
   background: linear-gradient(135deg, #000, #0a1a2f);
-  background-image: url(images/feature.webp);
+  background-image: url(/images/feature1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   text-align: center;
   padding: 70px 10%;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    background-image: url(/images/feature1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .contact input[type="email"] {
+    margin-bottom: 8px;
+  }
 }
 
 .contact h3 {
@@ -261,6 +370,10 @@ header nav a:hover {
   outline: none;
   width: 280px;
   margin-right: 10px;
+}
+
+.contact p {
+  margin-bottom: 10px;
 }
 
 .contact button {
@@ -298,11 +411,16 @@ footer span {
     text-align: center;
   }
 
-  header nav {
-    margin-top: 10px;
-  }
-
   .feature-boxes {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none !important;
+  }
+  nav.active {
+    display: flex !important;
   }
 }
