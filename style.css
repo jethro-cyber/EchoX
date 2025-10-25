@@ -98,7 +98,7 @@ header nav a {
     height: 3px;
     background: #fff;
     margin: 5px 0;
-    transition: 0.3s;
+    transition: all 0.3s ease;
   }
 
   .hamburger.active span:nth-child(1) {
@@ -213,7 +213,7 @@ header nav a:hover {
 
 /* FEATURES */
 .features {
-  background-image: url(/images/hero.jpg);
+  background-image: url(images/hero.jpg);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -338,7 +338,7 @@ header nav a:hover {
 /* CONTACT */
 .contact {
   background: linear-gradient(135deg, #000, #0a1a2f);
-  background-image: url(/images/feature1.jpg);
+  background-image: url(images/feature1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -348,7 +348,7 @@ header nav a:hover {
 
 @media (max-width: 768px) {
   .contact {
-    background-image: url(/images/feature1.jpg);
+    background-image: url(images/feature1.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
